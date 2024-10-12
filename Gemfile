@@ -10,7 +10,8 @@ gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-
+gem "pry-rails"
+gem "active_model_serializers", "~> 0.10.2"
 gem "devise"
 gem "aws-sdk-s3", require: false
 gem "active_storage_validations"
