@@ -34,11 +34,19 @@
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="active_storage_validations (v1.2.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activejob (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="antispam (v0.2.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.989.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.209.1, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.94.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.167.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.10.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.8, rbenv: 3.2.2) [gem]" level="application" />
@@ -53,13 +61,18 @@
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.6, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="image_processing (v1.13.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.7.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.14.1, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.22.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.7.3, rbenv: 3.2.2) [gem]" level="application" />
@@ -76,6 +89,7 @@
     <orderEntry type="library" scope="PROVIDED" name="puma (v6.4.3, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.7, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-attack (v6.7.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.0.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.1.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rackup (v2.1.0, rbenv: 3.2.2) [gem]" level="application" />
@@ -85,8 +99,11 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v7.1.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.7.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis (v5.3.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.22.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.10, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.2.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, rbenv: 3.2.2) [gem]" level="application" />
