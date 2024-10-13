@@ -1,5 +1,6 @@
 
 # TODO: Set redirect url to react and have them provide the params[:code] + user info
+# TODO: Refactor this logic into a service object
 
 class Api::V1::PatreonController < ApplicationController
   def index
@@ -9,6 +10,10 @@ class Api::V1::PatreonController < ApplicationController
     oauth_client = Patreon::OAuth.new(patreon_cid, patreon_secret)
     tokens = oauth_client.get_tokens(params[:code], redirect_uri)
     access_token = tokens['access_token']
+
+    date = DateTime.now
+    added_seconds = tokens['expires_in']
+    expiry_date = date + Rational(added_seconds, 86400)
 
     patreon_api_url = 'https://www.patreon.com/api/oauth2/v2'
     url = "#{patreon_api_url}/identity?include=memberships.campaign&fields[member]=patron_status"
