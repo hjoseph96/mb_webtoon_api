@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: %w(create show) do
       end
+
+      devise_scope :user do
+        post 'sessions', to: 'sessions#create'
+        delete 'sessions', to: 'sessions#destroy'
+      end
     end
   end
 end
