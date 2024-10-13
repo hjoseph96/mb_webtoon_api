@@ -79,7 +79,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_210134) do
     t.string "last_sign_in_ip"
     t.string "patreon_access_token"
     t.string "patreon_refresh_token"
-    t.string "patreon_expires_in"
+    t.datetime "patreon_expires_at"
+    t.boolean "is_ad_free", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
