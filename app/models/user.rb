@@ -2,8 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :trackable
+         :recoverable, :rememberable, :validatable, :trackable
 
   has_one_attached :avatar
 
@@ -27,9 +26,5 @@ class User < ApplicationRecord
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_hash).first
     end
-  end
-
-  def to_json
-    UserSerializer.new(self).to_json
   end
 end

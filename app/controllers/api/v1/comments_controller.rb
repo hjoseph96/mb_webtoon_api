@@ -22,6 +22,5 @@ class Api::V1::CommentsController < ApplicationController
   def find_commentable
     @commentable = Comment.find(params[:comment_id]) if params[:comment_id]
     @commentable = Chapter.find(params[:chapter_id]) if params[:chapter_id]
-    binding.pry
   end
 end
