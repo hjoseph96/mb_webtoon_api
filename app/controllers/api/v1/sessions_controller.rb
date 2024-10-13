@@ -8,7 +8,7 @@ class Api::V1::SessionsController < ApplicationController
 
     if @user.valid_password?(user_params[:password])
       sign_in("user", @user)
-      render(json: { success: true, user: @user })
+      render json: @user
       return
     end
 

@@ -28,4 +28,8 @@ class User < ApplicationRecord
       where(conditions.to_hash).first
     end
   end
+
+  def to_json
+    UserSerializer.new(self).to_json
+  end
 end

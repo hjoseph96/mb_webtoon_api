@@ -18,6 +18,10 @@ Rails.application.routes.draw do
         post 'sessions', to: 'sessions#create'
         delete 'sessions', to: 'sessions#destroy'
       end
+
+      namespace :admin do
+        resources :chapters, only: [:index, :create]
+      end
     end
   end
 end
