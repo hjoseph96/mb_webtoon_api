@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       resources :users, only: %w(create show) do
       end
 
+      resources :comments, only: :create
+
       devise_scope :user do
         post 'sessions', to: 'sessions#create'
         delete 'sessions', to: 'sessions#destroy'

@@ -47,7 +47,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_210134) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["number"], name: "index_chapters_on_number"
+    t.index ["number"], name: "index_chapters_on_number", unique: true
+    t.index ["title"], name: "index_chapters_on_title", unique: true
   end
 
   create_table "comments", force: :cascade do |t|

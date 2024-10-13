@@ -7,7 +7,7 @@ class Api::V1::SessionsController < ApplicationController
     return invalid_login_attempt unless @user.present?
 
     if @user.valid_password?(user_params[:password])
-      sign_in("user", @user)
+      sign_in(:user, @user)
       render json: @user
       return
     end
