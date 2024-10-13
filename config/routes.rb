@@ -8,13 +8,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "hello#index"
 
   namespace :api do
     namespace :v1 do
+
       resources :users, only: %w(create show) do
       end
 
-      resources :comments, only: :create
+      resources :comments, only: %w(create show)
+
+      resources :chapters, only: [:index, :show]
+
 
       devise_scope :user do
         post 'sessions', to: 'sessions#create'
@@ -22,6 +27,8 @@ Rails.application.routes.draw do
       end
 
       namespace :admin do
+        resources :users, only: %w(index)
+        resources :comments, only: %w(destroy)
         resources :chapters, only: [:index, :create]
       end
     end

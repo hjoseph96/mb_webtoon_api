@@ -1,3 +1,11 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :username, :patreon_access_token, :confirmed_at, :created_at
+  include ApplicationHelper
+
+  attributes :id, :email, :username, :avatar_url, :patreon_access_token, :created_at
+
+  def avatar_url
+    return nil unless object.avatar.prsent?
+
+    cdn_for(object.avatar)
+  end
 end

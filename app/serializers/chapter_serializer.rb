@@ -3,6 +3,8 @@ class ChapterSerializer < ActiveModel::Serializer
 
   attributes :id, :number, :title, :thumbnail_url, :comic_image_url, :created_at
 
+  has_many :comments
+
   def thumbnail_url
     cdn_for(object.thumbnail)
   end

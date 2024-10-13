@@ -13,10 +13,21 @@ class Api::V1::CommentsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+
+    unless @comment.present?
+      render json: { error: "Unable to find comment" }, status: :not_found
+      return
+    end
+
+    render json: @comment
+  end
+
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id)
+    params.require(:comment).permit(:body, :user_id, :attachment)
   end
 
   def find_commentable

@@ -18,8 +18,8 @@ gem "aws-sdk-s3", require: false
 gem "active_storage_validations"
 gem "rack-attack"
 gem "antispam"
-gem "activerecord-session_store"
-
+gem "pagy"
+gem "httparty"
 
 
 # Use Redis adapter to run Action Cable in production
