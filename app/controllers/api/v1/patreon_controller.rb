@@ -1,4 +1,5 @@
 
+# TODO: Set redirect url to react and have them provide the params[:code] + user info
 
 class Api::V1::PatreonController < ApplicationController
   def index
