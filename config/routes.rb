@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      resources :users, only: %w(create show) do
+      resources :users, only: %w(create show update) do
       end
 
       resources :comments, only: %w(create show)
 
-      resources :chapters, only: [:index, :show]
+      resources :chapters, only: %w(index show)
+
+      resources :patreon, only: :index
 
 
       devise_scope :user do

@@ -34,7 +34,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
 
       t.string :patreon_access_token
       t.string :patreon_refresh_token
-      t.string :patreon_expires_in
+      t.datetime :patreon_expires_at
+
+      t.boolean :is_ad_free, default: false, null: false
 
 
       t.timestamps null: false

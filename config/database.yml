@@ -80,5 +80,8 @@ test:
 production:
   <<: *default
   database: mb_webtoon_api_production
-  username: mb_webtoon_api
-  password: <%= ENV["MB_WEBTOON_API_DATABASE_PASSWORD"] %>
+
+
+staging:
+  <<: *default
+  database: mb_webtoon_api_staging

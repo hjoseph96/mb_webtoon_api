@@ -20,6 +20,8 @@ gem "rack-attack"
 gem "antispam"
 gem "pagy"
 gem "httparty"
+gem "patreon", git: 'https://github.com/Patreon/patreon-ruby.git', branch: 'mcony-BECORE-112-ruby-api-v2'
+
 
 
 # Use Redis adapter to run Action Cable in production
