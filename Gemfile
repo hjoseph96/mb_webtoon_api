@@ -13,6 +13,8 @@ gem "puma", ">= 5.0"
 gem "pry-rails"
 gem "active_model_serializers", "~> 0.10.2"
 gem "devise"
+gem "sidekiq"
+gem "sidekiq-cron"
 gem "jwt"
 gem "aws-sdk-s3", require: false
 gem "active_storage_validations"

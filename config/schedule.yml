@@ -1,0 +1,4 @@
+refresh_patreon_tokens:
+  cron: "0 0 * * *"
+  class: "RefreshPatreon"
+  queue: refresh_patreon
