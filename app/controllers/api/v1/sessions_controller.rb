@@ -4,6 +4,7 @@ class Api::V1::SessionsController < ApplicationController
   skip_before_action :authenticate!, only: :create
 
   api :POST, '/v1/user/sessions'
+  description 'User login endpoint. Returns JSON Web token for Authorization header.'
   param :login, String, desc: 'Can be a username OR email', required: true
   param :password, String, desc: "User's password", required: true
   def create

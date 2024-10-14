@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :authenticate!, only: :create
 
   api :POST, '/v1/users'
-  description 'User signup endpoint'
+  description 'User signup endpoint. Return JSON Web Token for Authorization header.'
   param :user, Hash, desc: 'Key name for user params', required: true do
     param :username, String, desc: 'Unique (available) username for user', required: true
     param :email, String, desc: 'Unique (available) email for user', required: true

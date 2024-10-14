@@ -5,7 +5,7 @@ class Api::V1::Admin::UsersController < ApplicationController
 
   api :GET, '/v1/admin/users'
   description 'List all users (admin only)'
-  param :page, Integer, desc: 'page param for pagination. must be >= 1', required: true
+  param :page, String, desc: 'page param for pagination. must be >= 1', required: true
   def index
     page = params[:page] || 1
 
