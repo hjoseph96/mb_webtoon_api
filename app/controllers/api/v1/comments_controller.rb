@@ -1,15 +1,18 @@
 class Api::V1::CommentsController < ApplicationController
   before_action :find_commentable, only: :create
-  before_action :require_login, only: :vote
+  skip_before_action :authenticate!, only: :show
 
   api :POST, '/v1/comments'
+  param :chapter_id, String, 'ID of the chapter being commented on'
+  param :comment_id, String, 'ID of the comment being replied to'
   param :comment, Hash, desc: 'Key name for comment params', required: true do
-    param :user_id, Integer, desc: 'ID of the user making the comment', required: true
     param :body, String, desc: 'Comment text body', required: true
-    param :attachment, File, desc: 'Image attachment. Can be gif, png, jpg, jpeg', required: true
+    param :attachment, ActionDispatch::Http::UploadedFile, desc: 'Image attachment. Can be gif, png, jpg, jpeg', required: true
   end
   def create
     @comment = @commentable.comments.new(comment_params)
+
+    @comment.user_id = current_user.id
 
     if @comment.save
       render json: @comment
@@ -21,7 +24,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   api :GET, '/v1/comments/:id'
-  param :id, Integer, desc: 'ID of the comment in the URL', required: true
+  param :id, String, desc: 'ID of the comment in the URL', required: true
   def show
     @comment = Comment.find(params[:id])
 
@@ -34,7 +37,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   api :POST, '/v1/comments/:id/vote'
-  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
+  param :id, String, desc: 'ID of the chapter in the URL', required: true
   param :like_type, String, desc: 'Must be "upvote" or "downvote"', required: true
   def vote
     @comment = Comment.find(params[:id])
@@ -72,7 +75,7 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id, :attachment)
+    params.require(:comment).permit(:body, :attachment)
   end
 
   def find_commentable

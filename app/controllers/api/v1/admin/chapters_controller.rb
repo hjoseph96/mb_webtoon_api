@@ -8,9 +8,9 @@ class Api::V1::Admin::ChaptersController < ApplicationController
   description 'Chapter upload endpoint (admin only)'
   param :chapter, Hash, desc: 'Key name for chapter params', required: true do
     param :title, String, desc: 'Unique (available) title for chapter', required: true
-    param :number, Integer, desc: 'The chapter number, must be unique (available)', required: true
-    param :thumbnail, File, desc: "Preview thumbnail for the chapter. Must be an image", required: true
-    param :comic_image, File, desc: "The vertical scrolling comic image.", required: true
+    param :number, String, desc: 'The chapter number, must be unique (available)', required: true
+    param :thumbnail, ActionDispatch::Http::UploadedFile, desc: "Preview thumbnail for the chapter. Must be an image", required: true
+    param :comic_image, ActionDispatch::Http::UploadedFile, desc: "The vertical scrolling comic image.", required: true
   end
   def create
     @chapter = Chapter.new(chapter_params)

@@ -1,6 +1,8 @@
 class Api::V1::SessionsController < ApplicationController
   include Devise::Controllers::Helpers
 
+  skip_before_action :authenticate!, only: :create
+
   api :POST, '/v1/user/sessions'
   param :login, String, desc: 'Can be a username OR email', required: true
   param :password, String, desc: "User's password", required: true
@@ -11,7 +13,7 @@ class Api::V1::SessionsController < ApplicationController
 
     if @user.valid_password?(user_params[:password])
       sign_in(:user, @user)
-      render json: @user
+      render json: { user: UserSerializer.new(@user), token: JsonWebToken.encode(user_id: @user.id) }
       return
     end
 
@@ -33,7 +35,7 @@ class Api::V1::SessionsController < ApplicationController
   protected
 
   def invalid_login_attempt
-    render(json: { success: false, message: "Error with your login or password" }, status: :unprocessable_content)
+    render json: { success: false, message: 'Error with your login or password' }, status: :unprocessable_content
   end
 
   private

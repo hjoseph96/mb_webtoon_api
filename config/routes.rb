@@ -32,10 +32,7 @@ Rails.application.routes.draw do
       resources :patreon, only: :index
 
 
-      devise_scope :user do
-        post 'sessions', to: 'sessions#create'
-        delete 'sessions', to: 'sessions#destroy'
-      end
+      resources :sessions, only: %w(create destroy)
 
       namespace :admin do
         resources :users, only: %w(index)

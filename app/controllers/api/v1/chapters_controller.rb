@@ -1,10 +1,10 @@
 class Api::V1::ChaptersController < ApplicationController
   include Pagy::Backend
 
-  before_action :require_login, only: :vote
+  skip_before_action :authenticate!, only: %w(index show)
 
   api :GET, '/v1/chapters'
-  param :page, Integer, desc: 'page param for pagination. must be >= 1', required: true
+  param :page, String, desc: 'page param for pagination. must be >= 1', required: true
   def index
     page = params[:page] || 1
 
@@ -22,7 +22,7 @@ class Api::V1::ChaptersController < ApplicationController
   end
 
   api :POST, '/v1/chapters/:id/vote'
-  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
+  param :id, String, desc: 'ID of the chapter in the URL', required: true
   param :like_type, String, desc: 'Must be "upvote" or "downvote"', required: true
   def vote
     @chapter = Chapter.find(params[:id])
