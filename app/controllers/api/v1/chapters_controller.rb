@@ -6,7 +6,7 @@ class Api::V1::ChaptersController < ApplicationController
   def index
     page = params[:page] || 1
 
-    @chapters = pagy(@chapters, page: page).last
+    @chapters = pagy(Chapter.all, page: page).last
 
     render json: @chapters
   end
