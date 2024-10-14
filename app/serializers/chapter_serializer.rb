@@ -1,7 +1,8 @@
 class ChapterSerializer < ActiveModel::Serializer
   include ApplicationHelper
 
-  attributes :id, :number, :title, :thumbnail_url, :comic_image_url, :created_at
+  attributes :id, :number, :title, :thumbnail_url, :comic_image_url,
+             :upvotes, :downvotes, :total_votes, :created_at
 
   has_many :comments
 
@@ -11,5 +12,17 @@ class ChapterSerializer < ActiveModel::Serializer
 
   def comic_image_url
     cdn_for(object.comic_image)
+  end
+
+  def upvotes
+    object.cached_votes_up
+  end
+
+  def downvotes
+    object.cached_votes_down
+  end
+
+  def total_votes
+    object.cached_votes_total
   end
 end

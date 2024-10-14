@@ -16,9 +16,17 @@ Rails.application.routes.draw do
       resources :users, only: %w(create show update) do
       end
 
-      resources :comments, only: %w(create show)
+      resources :comments, only: %w(create show) do
+        member do
+          post :vote
+        end
+      end
 
-      resources :chapters, only: %w(index show)
+      resources :chapters, only: %w(index show) do
+        member do
+          post :vote
+        end
+      end
 
       resources :patreon, only: :index
 
@@ -31,7 +39,7 @@ Rails.application.routes.draw do
       namespace :admin do
         resources :users, only: %w(index)
         resources :comments, only: %w(destroy)
-        resources :chapters, only: [:index, :create]
+        resources :chapters, only: %w(index create)
       end
     end
   end
