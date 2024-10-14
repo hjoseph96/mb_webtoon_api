@@ -3,6 +3,8 @@ class Api::V1::ChaptersController < ApplicationController
 
   before_action :require_login, only: :vote
 
+  api :GET, '/v1/chapters'
+  param :page, Integer, desc: 'page param for pagination. must be >= 1', required: true
   def index
     page = params[:page] || 1
 
@@ -11,12 +13,17 @@ class Api::V1::ChaptersController < ApplicationController
     render json: @chapters
   end
 
+  api :GET, '/v1/chapters/:id'
+  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
   def show
     @chapter = Chapter.find(params[:id])
 
     render json: @chapter
   end
 
+  api :POST, '/v1/chapters/:id/vote'
+  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
+  param :like_type, String, desc: 'Must be "upvote" or "downvote"', required: true
   def vote
     @chapter = Chapter.find(params[:id])
 

@@ -1,6 +1,9 @@
 class Api::V1::SessionsController < ApplicationController
   include Devise::Controllers::Helpers
 
+  api :POST, '/v1/user/sessions'
+  param :login, String, desc: 'Can be a username OR email', required: true
+  param :password, String, desc: "User's password", required: true
   def create
     @user = User.find_for_database_authentication(login: user_params[:login])
 
@@ -15,6 +18,8 @@ class Api::V1::SessionsController < ApplicationController
     invalid_login_attempt
   end
 
+  api :DELETE, '/v1/user/sessions'
+  param :user_id, Integer, desc: 'ID of the user to logout', required: true
   def destroy
     @user = User.find(params[:user_id])
 

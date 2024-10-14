@@ -1,4 +1,13 @@
 class Api::V1::UsersController < ApplicationController
+
+  api :POST, '/v1/users'
+  description 'User signup endpoint'
+  param :comment, Hash, desc: 'Key name for comment params', required: true do
+    param :username, String, desc: 'Unique (available) username for user', required: true
+    param :email, String, desc: 'Unique (available) email for user', required: true
+    param :password, String, desc: "User's password", required: true
+    param :password_confirmation, String, desc: "User's password confirmation (ensure they match)", required: true
+  end
   def create
     @user = User.new(user_params)
 

@@ -1,4 +1,9 @@
 class Api::V1::Admin::CommentsController < ApplicationController
+
+
+  api :POST, '/v1/admin/comments/:id/'
+  description 'Delete a comment (admin only).'
+  param :id, Integer, desc: 'ID of the comment in the URL', required: true
   def destroy
     @comment = Comment.find(params[:id])
 

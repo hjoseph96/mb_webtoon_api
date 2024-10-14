@@ -2,7 +2,12 @@ class Api::V1::CommentsController < ApplicationController
   before_action :find_commentable, only: :create
   before_action :require_login, only: :vote
 
-
+  api :POST, '/v1/comments'
+  param :comment, Hash, desc: 'Key name for comment params', required: true do
+    param :user_id, Integer, desc: 'ID of the user making the comment', required: true
+    param :body, String, desc: 'Comment text body', required: true
+    param :attachment, File, desc: 'Image attachment. Can be gif, png, jpg, jpeg', required: true
+  end
   def create
     @comment = @commentable.comments.new(comment_params)
 
@@ -15,6 +20,8 @@ class Api::V1::CommentsController < ApplicationController
     end
   end
 
+  api :GET, '/v1/comments/:id'
+  param :id, Integer, desc: 'ID of the comment in the URL', required: true
   def show
     @comment = Comment.find(params[:id])
 
@@ -26,6 +33,9 @@ class Api::V1::CommentsController < ApplicationController
     render json: @comment
   end
 
+  api :POST, '/v1/comments/:id/vote'
+  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
+  param :like_type, String, desc: 'Must be "upvote" or "downvote"', required: true
   def vote
     @comment = Comment.find(params[:id])
 
