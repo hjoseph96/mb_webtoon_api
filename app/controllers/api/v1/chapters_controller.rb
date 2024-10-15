@@ -14,7 +14,7 @@ class Api::V1::ChaptersController < ApplicationController
   end
 
   api :GET, '/v1/chapters/:id'
-  param :id, Integer, desc: 'ID of the chapter in the URL', required: true
+  param :id, String, desc: 'ID of the chapter in the URL', required: true
   def show
     @chapter = Chapter.find(params[:id])
 
