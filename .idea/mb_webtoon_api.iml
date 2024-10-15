@@ -45,7 +45,7 @@
     <orderEntry type="library" scope="PROVIDED" name="antispam (v0.2.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="apipie-rails (v1.4.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.0, rbenv: 3.2.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.989.0, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.990.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.209.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.94.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.167.0, rbenv: 3.2.2) [gem]" level="application" />
@@ -77,6 +77,7 @@
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.7.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.14.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.7.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json-api-vanilla (v1.0.4, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jsonapi-renderer (v0.2.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v2.9.3, rbenv: 3.2.2) [gem]" level="application" />
@@ -101,6 +102,8 @@
     <orderEntry type="library" scope="PROVIDED" name="pagy (v9.1.0, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="patreon (v1.0.0@b03439, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.8, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="postmark (v1.25.1, rbenv: 3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="postmark-rails (v0.22.1, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.14.2, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-rails (v0.3.11, rbenv: 3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.1.2, rbenv: 3.2.2) [gem]" level="application" />

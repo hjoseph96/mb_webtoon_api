@@ -11,7 +11,8 @@ class RefreshPatreonJob
       @client.fetch_patreon_identity
       response = @client.is_an_active_patron?
       if response.try(:[], :error).present?
-        # TODO: Send an email telling them to subscribe
+        NewsletterMailer.with(user: p).inactive_patron.deliver_now
+
         p.update!(is_ad_free: false)
       else
         p.update!(is_ad_free: true)
