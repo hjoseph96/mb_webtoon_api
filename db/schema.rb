@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_13_234921) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_20_062044) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -78,6 +78,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_13_234921) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.bigint "chapter_id", null: false
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chapter_id"], name: "index_pages_on_chapter_id"
+    t.index ["order", "chapter_id"], name: "index_pages_on_order_and_chapter_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -122,4 +131,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_13_234921) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "users"
+  add_foreign_key "pages", "chapters"
 end

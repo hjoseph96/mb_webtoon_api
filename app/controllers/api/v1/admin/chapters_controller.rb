@@ -10,7 +10,10 @@ class Api::V1::Admin::ChaptersController < ApplicationController
     param :title, String, desc: 'Unique (available) title for chapter', required: true
     param :number, String, desc: 'The chapter number, must be unique (available)', required: true
     param :thumbnail, ActionDispatch::Http::UploadedFile, desc: "Preview thumbnail for the chapter. Must be an image", required: true
-    param :comic_image, ActionDispatch::Http::UploadedFile, desc: "The vertical scrolling comic image.", required: true
+    param :pages_attributes, Hash, desc: "The vertical scrolling comic image.", required: true do
+      param :image,  ActionDispatch::Http::UploadedFile, required: false
+      param :order, String, required: false
+    end
   end
   def create
     @chapter = Chapter.new(chapter_params)
@@ -28,7 +31,7 @@ class Api::V1::Admin::ChaptersController < ApplicationController
 
   def chapter_params
     params.require(:chapter).permit(
-      :title, :number, :thumbnail, :comic_image
+      :title, :number, :thumbnail, pages_attributes: [:image, :order]
     )
   end
 end
